@@ -49,7 +49,7 @@ export function Home(){
 
     const handleTagSelection = (e: String) =>{
         // setSearchTag(`${e}`)
-        console.log(e)
+//         console.log(e)
         if(e == 'todos') return setSearchInfoResults([])
 
         const newArrayTwoResults = [...siteInformation, ...linksSearchFull]
@@ -58,7 +58,7 @@ export function Home(){
         )
         if(resultArray.length === 0) return setSearchInfoResults([])
 
-        console.log(resultArray)
+//         console.log(resultArray)
 
         setSearchInfoResults(resultArray)
     }
@@ -71,7 +71,7 @@ export function Home(){
         const resultArray = newArrayTwoResults.filter(
             newArrayTwoResults => newArrayTwoResults.name.toLowerCase().includes(`${searchInfo.toLowerCase()}`)
         )
-        console.log(resultArray)
+//         console.log(resultArray)
         // setLinksSearchFull(resultArray)
         setSearchInfoResults(resultArray)
     }
@@ -86,7 +86,7 @@ export function Home(){
         const starCountRef = ref(db, 'newUserSitesLink');
         onValue(starCountRef, (snapshot) => {
             const data = snapshot.val();
-            console.log(Object.values(data))
+//             console.log(Object.values(data))
             let value = []
             value = Object.values(data);
             setSiteInformation(value as any)
